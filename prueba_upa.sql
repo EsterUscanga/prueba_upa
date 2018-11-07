@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`materias` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`materias` (
-  `id_materia` INT ZEROFILL NOT NULL,
+  `id_materia` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_materia` TEXT NOT NULL,
   PRIMARY KEY (`id_materia`))
 ENGINE = InnoDB;
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`carreras` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`carreras` (
-  `id_carrera` INT ZEROFILL NOT NULL,
+  `id_carrera` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_carrera` TEXT NOT NULL,
   PRIMARY KEY (`id_carrera`))
 ENGINE = InnoDB;
@@ -55,7 +55,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`grupos` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`grupos` (
-  `id_grupo` INT ZEROFILL NOT NULL,
+  `id_grupo` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_grupo` VARCHAR(45) NOT NULL,
   `id_carrera` INT ZEROFILL NOT NULL,
   `materia_profesor_id_material_profesore` INT ZEROFILL NOT NULL,
@@ -73,7 +73,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`edificios` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`edificios` (
-  `id_edificio` INT ZEROFILL NOT NULL,
+  `id_edificio` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_edificio` TEXT NULL,
   PRIMARY KEY (`id_edificio`))
 ENGINE = InnoDB;
@@ -85,7 +85,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`aulas` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`aulas` (
-  `id_aula` INT ZEROFILL NOT NULL,
+  `id_aula` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_aula` TEXT NOT NULL,
   `id_edificio` INT ZEROFILL NOT NULL,
   PRIMARY KEY (`id_aula`),
@@ -104,7 +104,7 @@ DROP TABLE IF EXISTS `db_dep`.`materia_profesor` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`materia_profesor` (
   `id_material_profesore` INT ZEROFILL NOT NULL,
-  `id_materia` INT ZEROFILL NOT NULL,
+  `id_materia` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `id_maestro` INT NOT NULL,
   `id_aula` INT ZEROFILL NOT NULL,
   `id_grupo` INT ZEROFILL NOT NULL,
