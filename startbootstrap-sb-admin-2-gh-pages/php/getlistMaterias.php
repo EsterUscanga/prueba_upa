@@ -1,22 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_dep";
+  include 'connetion.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  //obtener lista de materias, de la tabla de materias para mostrarlo en el select de vista_materias.html
+
+  $sql = "SELECT nombre_materia from materias";
+  $result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()){
+    echo '<option value="'.$row['nombre_materia'].'">'.$row['nombre_materia'].'</option>';
+  }
 }
-
-//obtener lista de materias, de la tabla de materias para mostrarlo en el select de vista_materias.html
-
-$sqlRequestNombresMaterias = "SELECT nombre_materia from materias";   
-$sqlRequestTotalMaterias = "SELECT count(*) from materias";   
-
-$resultNombresMaterias = $conn->query($sqlRequestNombresMaterias); //save resultNombres$resultNombresMaterias
-$resultTotalMaterias = $conn->query($sqlRequestNombresMaterias); //save result
-
-?> 
+?>
+ 
