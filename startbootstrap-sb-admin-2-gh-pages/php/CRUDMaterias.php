@@ -19,7 +19,7 @@
   // Retrieve comments from database
   $sql = "SELECT * FROM materias order by nombre_materia asc";
   $result = mysqli_query($conn, $sql);
-  $option = '<select id="selectMateria" class="form-control" onchange="show()">'; 
+  $option = '<select id="selectMateria" class="form-control" onchange="showMateria()">'; 
   while ($row = mysqli_fetch_array($result)){
     $option .= '<option value="'. $row['nombre_materia'] .'" id="' . $row['nombre_materia'] . '">'. $row['nombre_materia'] .'</option>';
   }

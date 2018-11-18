@@ -58,8 +58,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script src="../js/scriptMaterias.js"></script>
-    <script src="../js/cancel.js"></script>
-
     
 </body>
 
