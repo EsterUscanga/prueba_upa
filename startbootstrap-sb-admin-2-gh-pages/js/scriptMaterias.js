@@ -11,6 +11,8 @@ $(document).ready(function () {
       success: function (response) {
         $('#regresar').val('');
         $('#selectMateria').append(response);
+        alert("Registro agregado")
+
       }
     });
   });
@@ -24,6 +26,9 @@ $(document).ready(function () {
         'delete': 1,
         'nombre_materia': name,
       },
+      success: function () {
+        alert("Registro eliminado")
+      }
     });
   });
 });

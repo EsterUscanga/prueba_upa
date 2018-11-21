@@ -1,4 +1,4 @@
-<?php
+ <?php
   include 'connetion.php';
 
   if (isset($_POST['save'])) {
@@ -15,16 +15,19 @@
   	mysqli_query($conn, $sql);
   	exit();
   }
+
+  if (isset($_GET["getInfo"])) {
+    $name = $_GET["w1"];
+    $sqlInputs = "SELECT * FROM maestros where nombre_maestro = {$name}";
+  }
   
   // Retrieve comments from database
-  $sqlOption = "SELECT * FROM maestros order by apellido asc";
+  $sqlOption = "SELECT * FROM maestros order by apellido_maestro asc";
   $result = mysqli_query($conn, $sqlOption);
-  $option = '<select id="selectMateria" class="form-control" onchange="showMateria()">'; 
+  $option = '<select id="selectProfesor" class="form-control">'; 
   while ($row = mysqli_fetch_array($result)){
-    $option .= '<option value="'. $row['nombre_materia'] .'" id="' . $row['nombre_materia'] . '">'. $row['nombre_materia'] .'</option>';
+    $option .= '<option value="" id="'. $row['id_maestro'] .'">' . $row['nombre_maestro'] . ' '. $row['apellido_maestro'] .'</option>';
   }
   $option .= '</select>';
-
-  $sqlInputs = "";
 ?>
  
