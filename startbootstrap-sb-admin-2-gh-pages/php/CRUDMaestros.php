@@ -48,7 +48,7 @@
     $inputespecialidad = $result['especialidad'];
     exit();
   }
-  
+ 
   // Retrieve comments from database
   $sqlOption = "SELECT * FROM maestros order by apellido_maestro asc";
   $result = mysqli_query($conn, $sqlOption);
