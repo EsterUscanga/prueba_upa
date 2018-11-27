@@ -20,36 +20,16 @@
   	exit();
   }
 
+ 
   if (isset($_GET['getInfo'])) {
-    $GLOBALS['id_maestroTraer'] = $_GET['id_maestro'];
-    $sqlInputs = "SELECT * FROM maestros where id_maestro = {$id_maestroTraer}";
-    $result = mysqli_query($conn, $sqlOption);
-    $inputname = $result['nombre_maestro'];
-    $apellidos = explode(" ", $result['apellido_maestro']);
-    $inputpaterno = $apellidos[0];
-    $inputmaterno = $apellidos[1];
-    $inputpersonal = $result['correo_upa'];
-    $inputinstitucional = $result['correo_personal'];
-    $inputgrado = $result['grado_academico'];
-    $l = false;
-    $m = false;
-    $d = false;
-    switch ($inputgrado) {
-      case 'LICENCIATURA':
-          $l = true;
-          break;
-      case 'MAESTRIA':
-          $m = true;
-          break;
-      case 'DOCTORADO':
-          $d = true;
-          break;
-    }
-    $inputespecialidad = $result['especialidad'];
+    $id_maestro = $_GET['id_maestro'];
+    $sqlInputs = "SELECT * FROM maestros where id_maestro = {$id_maestro}";
+    $result = mysqli_query($conn, $sqlInputs);
+    $row = mysqli_fetch_array($result);
+    echo json_encode($row);
     exit();
   }
- 
-  // Retrieve comments from database
+  
   $sqlOption = "SELECT * FROM maestros order by apellido_maestro asc";
   $result = mysqli_query($conn, $sqlOption);
   $option = '<select id="selectProfesor" class="form-control">'; 

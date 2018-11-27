@@ -33,15 +33,8 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-5">
-                            <label for="disabledSelect">Apellido Paterno</label>
-                            <input type="text" class="form-control" id="regresarApellidoPaterno"onkeyup="this.value = this.value.toUpperCase();"></input>
-                        </div>
-                    <br>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-5">
-                            <label for="disabledSelect">Apellido Materno</label>
-                            <input type="text" class="form-control" id="regresarApellidoMaterno"onkeyup="this.value = this.value.toUpperCase();"></input>
+                            <label for="disabledSelect">Apellidos</label>
+                            <input type="text" class="form-control" id="regresarApellido"onkeyup="this.value = this.value.toUpperCase();"></input>
                         </div>
                     </div>
                     <br>
@@ -99,8 +92,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-    <script src="../js/scriptProfesores.js"></script>
-    <?php echo $script; ?>    
+    <script src="../js/scriptProfesores.js"></script> 
 
 </body>
 

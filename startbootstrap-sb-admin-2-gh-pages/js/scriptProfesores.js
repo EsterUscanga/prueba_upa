@@ -1,8 +1,7 @@
 $(document).ready(function () {
   $(document).on('click', '#agregar', function () {
     let name = $('#regresarNombre').val()
-    let paterno = $('#regresarApellidoPaterno').val()
-    let materno = $('#regresarApellidoMaterno').val()
+    let apellidos = $('#regresarApellidoPaterno').val()
     let personal = $('#regresarCorreoPersonal').val()
     let institucional = $('#regresarCorreoInstitucional').val()
     let grado = $('#regresarGradoAcademico').val()
@@ -13,7 +12,7 @@ $(document).ready(function () {
       data: {
         'save': 1,
         'nombre_maestro': name,
-        'apellido_maestro': paterno + ' ' + materno,
+        'apellido_maestro': apellidos,
         'correo_upa': institucional,
         'correo_personal': personal,
         'grado_academico': grado,
@@ -31,6 +30,27 @@ $(document).ready(function () {
       data: {
         'getInfo': true,
         'id_maestro': id,
+      },
+      success: function(response){
+        const obj = JSON.parse(response)
+        $('#regresarNombre').val(obj["nombre_maestro"])
+        $('#regresarApellido').val(obj["apellido_maestro"])
+        $('#regresarCorreoPersonal').val(obj["correo_upa"])
+        $('#regresarCorreoInstitucional').val(obj["correo_personal"])
+        switch (obj["grado_academico"]) {
+          case "LICENCIATURA":
+            $('#regresarGradoAcademico').val("LICENCIATURA")
+            break
+
+          case "MAESTRIA":
+            $('#regresarGradoAcademico').val("MAESTRIA")
+            break
+
+          case "DOCTORADO":
+            $('#regresarGradoAcademico').val("DOCTORADO")
+            break
+        }
+        $('#regresarEspecialidad').val(obj["especialidad"])  
       }
     })
   })
