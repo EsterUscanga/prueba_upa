@@ -1,6 +1,10 @@
  <?php
   include 'connetion.php';
 
+  if (!$conn) {
+    die('Connection failed ' . mysqli_error($conn));
+  }
+
   if (isset($_POST['save'])) {
     $name = $_POST['nombre_maestro'];
     $apellido = $_POST['apellido_maestro'];
@@ -16,12 +20,12 @@
   	exit();
   }
 
-  if (isset($_GET["getInfo"])) {
-    $GLOBALS['id_maestro'] = $_GET["w1"];
-    $sqlInputs = "SELECT * FROM maestros where id_maestro = {$id_maestro}";
+  if (isset($_GET['getInfo'])) {
+    $GLOBALS['id_maestroTraer'] = $_GET['id_maestro'];
+    $sqlInputs = "SELECT * FROM maestros where id_maestro = {$id_maestroTraer}";
     $result = mysqli_query($conn, $sqlOption);
     $inputname = $result['nombre_maestro'];
-    $apellidos = explode(" ", $_POST['apellido_maestro']);
+    $apellidos = explode(" ", $result['apellido_maestro']);
     $inputpaterno = $apellidos[0];
     $inputmaterno = $apellidos[1];
     $inputpersonal = $result['correo_upa'];
@@ -31,17 +35,18 @@
     $m = false;
     $d = false;
     switch ($inputgrado) {
-      case "LICENCIATURA":
+      case 'LICENCIATURA':
           $l = true;
           break;
-      case "MAESTRIA":
+      case 'MAESTRIA':
           $m = true;
           break;
-      case "DOCTORADO":
+      case 'DOCTORADO':
           $d = true;
           break;
     }
     $inputespecialidad = $result['especialidad'];
+    exit();
   }
   
   // Retrieve comments from database
@@ -52,5 +57,6 @@
     $option .= '<option value="" id=" '. $row['id_maestro'] .'">' . $row['nombre_maestro'] . ' '. $row['apellido_maestro'] .'</option>';
   }
   $option .= '</select>';
+
 ?>
  

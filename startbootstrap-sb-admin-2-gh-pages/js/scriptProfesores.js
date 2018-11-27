@@ -19,30 +19,30 @@ $(document).ready(function () {
         'grado_academico': grado,
         'especialidad': especialidad,
 
-      },
-      success: function (response) {
-        $('#regresarNombre').val('')
-        $('#regresarApellidoPaterno').val('')
-        $('#regresarApellidoMaterno').val('')
-        $('#regresarCorreoPersonal').val('')
-        $('#regresarCorreoInstitucional').val('')
-        $('#regresarGradoAcademico').val('')
-        $('#regresarEspecialidad').val('')
-
-        $('#select').append(response)
       }
     })
   })
+
+  $("#selectProfesor").change(function() {
+    let id = $(this).children(":selected").attr("id")
+    $.ajax({
+      url: '../php/CRUDMaestros.php',
+      type: 'GET',
+      data: {
+        'getInfo': true,
+        'id_maestro': id,
+      }
+    })
+  })
+  
 })
 
-$("#selectProfesor").change(function() {
-  let id = $(this).children(":selected").attr("id");
-  $.ajax({
-    url: '../php/CRUDMaestros.php',
-    type: 'GET',
-    data: {
-      'getInfo': 1,
-      'id_maestro': id,
-    }
-  })
-})
+function cancel() {
+  $('#regresarNombre').val('')
+  $('#regresarApellidoPaterno').val('')
+  $('#regresarApellidoMaterno').val('')
+  $('#regresarCorreoPersonal').val('')
+  $('#regresarCorreoInstitucional').val('')
+  $('#regresarGradoAcademico').val('')
+  $('#regresarEspecialidad').val('')         
+}

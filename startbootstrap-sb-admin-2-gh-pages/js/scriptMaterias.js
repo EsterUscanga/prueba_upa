@@ -40,5 +40,5 @@ function showMateria() {
 }
 
 function cancel() {
-  document.getElementById("regresar").value = " "          
+  $('#regresar').val('')   
 }

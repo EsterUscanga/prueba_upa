@@ -13,6 +13,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Vista Maestros</h1>
+                        <h1><?php echo $hola; ?></h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="row">
@@ -100,8 +101,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script src="../js/scriptProfesores.js"></script>
-    <script src="../js/cancel.js"></script>
-
 
 </body>
 
