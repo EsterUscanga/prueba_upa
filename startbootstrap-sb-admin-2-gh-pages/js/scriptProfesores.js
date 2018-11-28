@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(document).on('click', '#agregar', function () {
     let name = $('#regresarNombre').val()
-    let apellidos = $('#regresarApellidoPaterno').val()
+    let apellidos = $('#regresarApellido').val()
     let personal = $('#regresarCorreoPersonal').val()
     let institucional = $('#regresarCorreoInstitucional').val()
     let grado = $('#regresarGradoAcademico').val()
@@ -37,21 +37,32 @@ $(document).ready(function () {
         $('#regresarApellido').val(obj["apellido_maestro"])
         $('#regresarCorreoPersonal').val(obj["correo_upa"])
         $('#regresarCorreoInstitucional').val(obj["correo_personal"])
-        switch (obj["grado_academico"]) {
-          case "LICENCIATURA":
-            $('#regresarGradoAcademico').val("LICENCIATURA")
-            break
-
-          case "MAESTRIA":
-            $('#regresarGradoAcademico').val("MAESTRIA")
-            break
-
-          case "DOCTORADO":
-            $('#regresarGradoAcademico').val("DOCTORADO")
-            break
-        }
+        $('#regresarGradoAcademico').val(obj["grado_academico"])         
         $('#regresarEspecialidad').val(obj["especialidad"])  
       }
+    })
+
+    $(document).on('click', '#modificar', function () {
+      let name = $('#regresarNombre').val()
+      let apellidos = $('#regresarApellido').val()
+      let personal = $('#regresarCorreoPersonal').val()
+      let institucional = $('#regresarCorreoInstitucional').val()
+      let grado = $('#regresarGradoAcademico').val()
+      let especialidad = $('#regresarEspecialidad').val()
+      $.ajax({
+        url: '../php/CRUDMaestros.php',
+        type: 'POST',
+        data: {
+          'save': 1,
+          'nombre_maestro': name,
+          'apellido_maestro': apellidos,
+          'correo_upa': institucional,
+          'correo_personal': personal,
+          'grado_academico': grado,
+          'especialidad': especialidad,
+  
+        }
+      })
     })
   })
   
@@ -59,8 +70,7 @@ $(document).ready(function () {
 
 function cancel() {
   $('#regresarNombre').val('')
-  $('#regresarApellidoPaterno').val('')
-  $('#regresarApellidoMaterno').val('')
+  $('#regresarApellido').val('')
   $('#regresarCorreoPersonal').val('')
   $('#regresarCorreoInstitucional').val('')
   $('#regresarGradoAcademico').val('')
