@@ -55,7 +55,7 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Grado academico</label>
-                            <input type="text" class="form-control" id="regresarGradoAcademico"onkeyup="this.value = this.value.toLowerCase();"></input>
+                            <input type="text" class="form-control" id="regresarGradoAcademico"onkeyup="this.value = this.value.toUpperCase();"></input>
                         </div>
                     </div>
                     <div class="row">

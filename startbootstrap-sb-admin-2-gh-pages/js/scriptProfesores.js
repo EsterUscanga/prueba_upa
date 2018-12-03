@@ -10,7 +10,7 @@ $(document).ready(function () {
       url: '../php/CRUDMaestros.php',
       type: 'POST',
       data: {
-        'save': 1,
+        'save': true,
         'nombre_maestro': name,
         'apellido_maestro': apellidos,
         'correo_upa': institucional,
@@ -53,7 +53,8 @@ $(document).ready(function () {
         url: '../php/CRUDMaestros.php',
         type: 'POST',
         data: {
-          'save': 1,
+          'update': true,
+          'id_maestro': id,
           'nombre_maestro': name,
           'apellido_maestro': apellidos,
           'correo_upa': institucional,
@@ -61,6 +62,20 @@ $(document).ready(function () {
           'grado_academico': grado,
           'especialidad': especialidad,
   
+        }
+      })
+    })
+
+    $(document).on('click', '#borrar', function () {
+      $.ajax({
+        url: '../php/CRUDMaestros.php',
+        type: 'POST',
+        data: {
+          'delete': true,
+          'id_maestro': id,
+        },
+        success: function(response){   
+          $("#selectProfesor option[value='"+response+"']").remove()
         }
       })
     })

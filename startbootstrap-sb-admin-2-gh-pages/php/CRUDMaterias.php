@@ -8,7 +8,6 @@
   	exit();
   }
 
-  // delete comment fromd database
   if (isset($_POST['delete'])) {
     $name = $_POST['nombre_materia'];
   	$sql = "DELETE FROM materias WHERE nombre_materia = "+$name;
@@ -16,7 +15,6 @@
   	exit();
   }
   
-  // Retrieve comments from database
   $sql = "SELECT * FROM materias order by nombre_materia asc";
   $result = mysqli_query($conn, $sql);
   $option = '<select id="selectMateria" class="form-control" onchange="showMateria()">'; 
