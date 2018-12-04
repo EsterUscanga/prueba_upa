@@ -29,7 +29,7 @@
                             <div class="col-xs-5">
                                 <label for="disabledSelect">Nombre de la Materia</label>
                                 <br>
-                                <input type="text" name="nombre_materia" class="form-control" id="regresar" onkeyup="this.value = this.value.toUpperCase();"></input>
+                                <input type="text" name="nombre_materia" class="form-control" id="regresar" onkeyup="this.value = this.value.toUpperCase();" required></input>
                                 <br>
                                 <?php include 'layout/buttonCRUD.php'?> 
                             </div>

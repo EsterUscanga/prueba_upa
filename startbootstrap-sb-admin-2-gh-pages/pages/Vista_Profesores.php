@@ -27,14 +27,14 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Nombre</label>
-                            <input type="text" class="form-control" id="regresarNombre"onkeyup="this.value = this.value.toUpperCase();"></input>
+                            <input type="text" class="form-control" id="regresarNombre"onkeyup="this.value = this.value.toUpperCase();" required></input>
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Apellidos</label>
-                            <input type="text" class="form-control" id="regresarApellido"onkeyup="this.value = this.value.toUpperCase();"></input>
+                            <input type="text" class="form-control" id="regresarApellido"onkeyup="this.value = this.value.toUpperCase();" required></input>
                         </div>
                     </div>
                     <br>
@@ -42,26 +42,26 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Correo Personal</label>
-                            <input type="text" class="form-control" id="regresarCorreoPersonal"onkeyup="this.value = this.value.toLowerCase(); "></input>
+                            <input type="text" class="form-control" id="regresarCorreoPersonal"onkeyup="this.value = this.value.toLowerCase();" required></input>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Correo Instutucional</label>
-                            <input type="text" class="form-control" id="regresarCorreoInstitucional"onkeyup="this.value = this.value.toLowerCase();"></input>
+                            <input type="text" class="form-control" id="regresarCorreoInstitucional"onkeyup="this.value = this.value.toLowerCase();" required></input>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Grado academico</label>
-                            <input type="text" class="form-control" id="regresarGradoAcademico"onkeyup="this.value = this.value.toUpperCase();"></input>
+                            <input type="text" class="form-control" id="regresarGradoAcademico"onkeyup="this.value = this.value.toUpperCase();" required></input>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Especialidad</label>
-                            <input type="text" class="form-control" id="regresarEspecialidad"onkeyup="this.value = this.value.toUpperCase();"></input>
+                            <input type="text" class="form-control" id="regresarEspecialidad"onkeyup="this.value = this.value.toUpperCase();" required></input>
                         </div>
                     </div>
                     <br>

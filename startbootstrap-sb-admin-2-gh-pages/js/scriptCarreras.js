@@ -2,59 +2,59 @@ $(document).ready(function () {
   $(document).on('click', '#agregar', function () {
     var name = $('#regresar').val()
     $.ajax({
-      url: '../php/CRUDMaterias.php',
+      url: '../php/CRUDCarreras.php',
       type: 'POST',
       data: {
         'save': 1,
-        'nombre_materia': name,
+        'nombre_carrera': name,
       },
       success: function (response) {
         $('#regresar').val('')
-        $('#selectMateria').append(response)
+        $('#selectcarrera').append(response)
         alert("Registro agregado")
 
       }
     })
   })
 
-  $("#selectMateria").change(function () {
+  $("#selectCarrera").change(function () {
     let id = $(this).children(":selected").attr("id")
     $.ajax({
-      url: '../php/CRUDMaterias.php',
+      url: '../php/CRUDCarreras.php',
       type: 'GET',
       data: {
         'getInfo': true,
-        'id_materia': id,
+        'id_carrera': id,
       },
       success: function (response) {
         const obj = JSON.parse(response)
-        $('#regresar').val(obj["nombre_materia"])
+        $('#regresar').val(obj["nombre_carrera"])
       }
     })
 
     $(document).on('click', '#modificar', function () {
       let name = $('#regresar').val()
       $.ajax({
-        url: '../php/CRUDMaterias.php',
+        url: '../php/CRUDCarreras.php',
         type: 'POST',
         data: {
           'update': true,
-          'id_materia': id,
-          'nombre_materia': name,
+          'id_carrera': id,
+          'nombre_carrera': name,
         }
       })
     })
 
     $(document).on('click', '#borrar', function () {
       $.ajax({
-        url: '../php/CRUDMaterias.php',
+        url: '../php/CRUDCarreras.php',
         type: 'GET',
         data: {
           'delete': true,
-          'id_materia': id,
+          'id_carrera': id,
         },
         success: function (response) {
-          $("#selectMateria option[value='"+response+"']").remove()
+          $("#selectCarrera option[value='"+response+"']").remove()
         }
       })
     })

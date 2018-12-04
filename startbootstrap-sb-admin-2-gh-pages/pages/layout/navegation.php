@@ -33,7 +33,7 @@
                     <a href="Materia_Grupo.html"><i class="glyphicon glyphicon-th"></i> Materia_Grupo</a>
                 </li>
                 <li>
-                    <a href="Vista_Carrera.html"><i class="glyphicon glyphicon-eye-open"></i>
+                    <a href="Vista_Carreras.php"><i class="glyphicon glyphicon-eye-open"></i>
                         Vista_Carrera</a>
                 </li>
                 <li>

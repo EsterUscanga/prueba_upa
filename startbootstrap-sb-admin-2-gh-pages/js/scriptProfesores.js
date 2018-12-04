@@ -69,7 +69,7 @@ $(document).ready(function () {
     $(document).on('click', '#borrar', function () {
       $.ajax({
         url: '../php/CRUDMaestros.php',
-        type: 'POST',
+        type: 'GET',
         data: {
           'delete': true,
           'id_maestro': id,

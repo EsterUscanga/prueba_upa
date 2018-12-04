@@ -1,3 +1,4 @@
+<?php include '../php/CRUDCarreras.php';?>
 <?php include 'layout/head.php';?>
 
 <body>
@@ -20,37 +21,29 @@
                     <div class="col-xs-5">
                         <label for="disabledSelect">Buscar</label>
                         <span class="glyphicon glyphicon-search"></span>
-                        <select id="disabledSelect" class="form-control">
-                            <option> </option>
-
-                        </select>
+                        <?php echo $option; ?>
                     </div>
-                    <label>
-
-                    </label>
-
-
-                </div>
-                <label>
-
-                </label>
-                <div class="row">
-                    <div class="col-xs-5">
-                        <label for="disabledSelect">Nombre de la Carrera</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option> </option>
-                        </select>
-                    </div>
-
                 </div>
                 <br>
-                <?php include 'layout/buttonCRUD.php'?>                     
-     
-                <!-- /.row -->
+                <form method="post" action="Vista_Carreras.php">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <label for="disabledSelect">Nombre de la Carrera</label>
+                            <br>
+                            <input type="text" name="nombre_carrera" class="form-control" id="regresar" onkeyup="this.value = this.value.toUpperCase();"
+                                required></input>
+                            <br>
+                            <?php include 'layout/buttonCRUD.php'?>
+                        </div>
+                    </div>
+                </form>
+                <br>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
@@ -66,6 +59,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../js/scriptCarreras.js"></script>
 
 </body>
 

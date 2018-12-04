@@ -44,8 +44,8 @@
   	exit();
   }
 
-  if (isset($_POST['delete'])) {
-  	$id = $_POST['id_maestro'];
+  if (isset($_GET['delete'])) {
+  	$id = $_GET['id_maestro'];
   	$sql = "DELETE FROM maestros WHERE id_maestro=" . $id;
     mysqli_query($conn, $sql);
     echo $id;
@@ -56,7 +56,7 @@
   $sqlOption = "SELECT * FROM maestros order by apellido_maestro asc";
   $result = mysqli_query($conn, $sqlOption);
   $option = '<select id="selectProfesor" class="form-control">'; 
-  $option .= '<option> Selecciona profesor </option>';
+  $option .= '<option>Selecciona profesor</option>';
   while ($row = mysqli_fetch_array($result)){
     $option .= '<option value="" id=" '. $row['id_maestro'] .'">' . $row['nombre_maestro'] . ' '. $row['apellido_maestro'] .'</option>';
   }
