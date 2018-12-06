@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `db_dep`.`grupos` (
   `id_grupo` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_grupo` VARCHAR(45) NOT NULL,
   `id_carrera` INT ZEROFILL NOT NULL,
-  `materia_profesor_id_material_profesore` INT ZEROFILL NOT NULL,
+  `materia_profesor_id_materia_profesor` INT ZEROFILL NOT NULL,
   PRIMARY KEY (`id_grupo`),
   CONSTRAINT `fk_grupos_carreras`
     FOREIGN KEY (`id_carrera`)
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `db_dep`.`aulas` (
   `nombre_aula` TEXT NOT NULL,
   `id_edificio` INT ZEROFILL NOT NULL,
   PRIMARY KEY (`id_aula`),
-  CONSTRAINT `fk_aulas_edificios1`
+  CONSTRAINT `fk_aulas_edificios`
     FOREIGN KEY (`id_edificio`)
     REFERENCES `db_dep`.`edificios` (`id_edificio`)
     ON DELETE NO ACTION
@@ -103,22 +103,22 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_dep`.`materia_profesor` ;
 
 CREATE TABLE IF NOT EXISTS `db_dep`.`materia_profesor` (
-  `id_material_profesore` INT ZEROFILL NOT NULL,
+  `id_materia_profesor` INT ZEROFILL NOT NULL,
   `id_materia` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `id_maestro` INT NOT NULL,
   `id_aula` INT ZEROFILL NOT NULL,
   `id_grupo` INT ZEROFILL NOT NULL,
-  PRIMARY KEY (`id_material_profesore`),
-  CONSTRAINT `fk_materia_profesor_materias1`
+  PRIMARY KEY (`id_materia_profesor`),
+  CONSTRAINT `fk_materia_profesor_materias`
     FOREIGN KEY (`id_materia`)
     REFERENCES `db_dep`.`materias` (`id_materia`),
-  CONSTRAINT `fk_materia_profesor_maestros1`
+  CONSTRAINT `fk_materia_profesor_maestros`
     FOREIGN KEY (`id_maestro`)
     REFERENCES `db_dep`.`maestros` (`id_maestro`),
-  CONSTRAINT `fk_materia_profesor_aulas1`
+  CONSTRAINT `fk_materia_profesor_aulas`
     FOREIGN KEY (`id_aula`)
     REFERENCES `db_dep`.`aulas` (`id_aula`),
-  CONSTRAINT `fk_materia_profesor_grupos1`
+  CONSTRAINT `fk_materia_profesor_grupos`
     FOREIGN KEY (`id_grupo`)
     REFERENCES `db_dep`.`grupos` (`id_grupo`)
 )
