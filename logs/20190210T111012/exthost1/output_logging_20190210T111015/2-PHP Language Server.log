@@ -1,0 +1,32 @@
+DEBUG     Checking PHPLS_ALLOW_XDEBUG
+DEBUG     The xdebug extension is not loaded
+
+[Info  - 11:10:16 AM] 12 files total
+[Info  - 11:10:16 AM] Indexing project for definitions and static references
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/connetion.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMateria_Grupo.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMaterias.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMaestros.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDCarreras.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/navegation.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/head.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/buttonCRUD.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Materia_Grupo.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Profesores.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Materias.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Carreras.php
+[Info  - 11:10:16 AM] Indexing project for dynamic references
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/connetion.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMateria_Grupo.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMaterias.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDMaestros.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/php/CRUDCarreras.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/navegation.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/head.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/layout/buttonCRUD.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Materia_Grupo.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Profesores.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Materias.php
+Parsing file:///opt/lampp/htdocs/prueba_upa/startbootstrap-sb-admin-2-gh-pages/pages/Vista_Carreras.php
+[Info  - 11:10:16 AM] 0 Packages
+[Info  - 11:10:16 AM] All 12 PHP files parsed in 0 seconds. 148 MiB allocated.

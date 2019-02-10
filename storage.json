@@ -1,0 +1,31 @@
+{
+    "telemetry.machineId": "8a34f5df6fc7f50bc342c28c2eb51099bdb25d1cc8ea549790fc7919946deabf",
+    "openedPathsList": {
+        "workspaces2": [
+            "file:///opt/lampp/htdocs/prueba_upa"
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "windowsState": {
+        "openedWindows": [],
+        "lastActiveWindow": {
+            "folderUri": {
+                "$mid": 1,
+                "fsPath": "/opt/lampp/htdocs/prueba_upa",
+                "external": "file:///opt/lampp/htdocs/prueba_upa",
+                "path": "/opt/lampp/htdocs/prueba_upa",
+                "scheme": "file"
+            },
+            "backupPath": "/opt/lampp/htdocs/prueba_upa/Backups/6caf1e8a1ebef5b61b3fac45241f4ffb",
+            "uiState": {
+                "mode": 1,
+                "x": 800,
+                "y": 27,
+                "width": 800,
+                "height": 873
+            }
+        }
+    }
+}
