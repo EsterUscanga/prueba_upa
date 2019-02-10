@@ -45,7 +45,7 @@
                         Vista_Profesores</a>
                 </li>
                 <li>
-                    <a href="Horario.html"><i class="glyphicon glyphicon-user"></i> Horario</a>
+                    <a href="Vista_Horario.php"><i class="glyphicon glyphicon-user"></i> Horario</a>
                 </li>
 
             </ul>
