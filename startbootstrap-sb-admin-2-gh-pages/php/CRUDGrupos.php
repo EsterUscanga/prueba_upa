@@ -34,13 +34,12 @@
   	exit();
   }
   
-  $sql = "SELECT * FROM carreras order by nombre_carrera asc";
-  $result = mysqli_query($conn, $sql);
-  $option = '<select id="selectCarrera" class="form-control">'; 
-  $option .= '<option>Selecciona Carrera</option>';
-  while ($row = mysqli_fetch_array($result)){
-    $option .= '<option value="'. $row['nombre_carrera'] .'" id="' . $row['id_carrera'] . '">'. $row['nombre_carrera'] .'</option>';
+  $optionGrupo = "SELECT * FROM grupos order by nombre_grupo asc";
+  $resultGrupo = mysqli_query($conn, $optionGrupo);
+  $selectGrupo = '<select id="selectGrupo" class="form-control">'; 
+  while ($row = mysqli_fetch_array($resultGrupo)){
+    $selectGrupo .= '<option value="'. $row['nombre_grupo'] .'" id="' . $row['id_grupo'] . '">'. $row['nombre_grupo'] .'</option>';
   }
-  $option .= '</select>';
+  $selectGrupo .= '</select>';
 ?>
  
