@@ -1,4 +1,4 @@
-<?php include '../php/CRUDCarreras.php';?>
+<?php include '../php/CRUDGrupos.php';?>
 <?php include 'layout/head.php';?>
 
 <body>
@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Vista Carrera</h1>
+                        <h1 class="page-header">Vista Grupo</h1>
 
                     </div>
                     <!-- /.col-lg-12 -->
@@ -21,16 +21,22 @@
                     <div class="col-xs-5">
                         <label for="disabledSelect">Buscar</label>
                         <span class="glyphicon glyphicon-search"></span>
-                        <?php echo $option; ?>
+                        <?php echo $selectGrupo; ?>
                     </div>
                 </div>
                 <br>
                 <form method="post" action="Vista_Carreras.php">
                     <div class="row">
                         <div class="col-xs-5">
-                            <label for="disabledSelect">Nombre de la Carrera</label>
+                          
+                            <label for="disabledSelect">Nombre del Grupo</label>
                             <br>
-                            <input type="text" name="nombre_carrera" class="form-control" id="regresar" onkeyup="this.value = this.value.toUpperCase();"
+                            <input type="text" name="nombre_grupo" class="form-control" id="regresarGrupo" onkeyup="this.value = this.value.toUpperCase();"
+                                required></input>
+                            <br>
+                            <label for="disabledSelect">Nombre de la carrera</label>
+                            <br>
+                            <input type="text" name="nombre_carrera" class="form-control" id="regresarCarrera" onkeyup="this.value = this.value.toUpperCase();"
                                 required></input>
                             <br>
                             <?php include 'layout/buttonCRUD.php'?>
