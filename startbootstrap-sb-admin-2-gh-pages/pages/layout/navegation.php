@@ -8,7 +8,7 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="../index.html"><i class="fas fa-home"></i></i> Inicio</a>
+                    <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Salir</a>
                 </li>
                 <li>
                     <a href="Solicitudes.html"><i class="glyphicon glyphicon-list-alt"></i> Solicitudes</a>
@@ -23,8 +23,7 @@
                     <a href="Vista_Materias.php"><i class="fas fa-pencil-alt"></i> Materias</a>
                 </li>
                 <li>
-                    <a href="Vista_Profesores.php"><i class="glyphicon glyphicon-user"></i>
-                        Profesores</a>
+                    <a href="Vista_Profesores.php"><i class="glyphicon glyphicon-user"></i> Profesores</a>
                 </li>
                 <li>
                     <a href="Vista_Grupos.php"><i class="fas fa-chalkboard-teacher"></i> Grupos</a>
