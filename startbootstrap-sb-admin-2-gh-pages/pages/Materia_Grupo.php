@@ -33,15 +33,17 @@
                     <div class="row">
 
                         <div class="col-xs-5">
-                            <label for="disabledSelect">Carrera</label>
-                            <?php echo $selectCarrera; ?>
+                            <label for="disabledSelect">Grupo</label>
+                            <?php echo $selectGrupo; ?>
                         </div>
                     </div>
 
                     <div id="horario" onload="horario()">
 
                     </div>
-
+                    
+                    <br>
+                    <?php include 'layout/horario.php'?>
                     <br>
                     <?php include 'layout/buttonCRUD.php'?>
                 </form>

@@ -16,13 +16,13 @@
   }
   $selectMaestro .= '</select>';
 
-  $optionCarrera = "SELECT * FROM carreras order by nombre_carrera asc";
-  $resultCarrera = mysqli_query($conn, $optionCarrera);
-  $selectCarrera = '<select id="selectCarrera" class="form-control">'; 
-  while ($row = mysqli_fetch_array($resultCarrera)){
-    $selectCarrera .= '<option value="'. $row['nombre_carrera'] .'" id="' . $row['id_carrera'] . '">'. $row['nombre_carrera'] .'</option>';
+  $optionGrupo = "SELECT * FROM grupos order by nombre_grupo asc";
+  $resultGrupo = mysqli_query($conn, $optionGrupo);
+  $selectGrupo = '<select id="selectGrupo" class="form-control">'; 
+  while ($row = mysqli_fetch_array($resultGrupo)){
+    $selectGrupo .= '<option value="'. $row['nombre_grupo'] .'" id="' . $row['id_grupo'] . '">'. $row['nombre_grupo'] .'</option>';
   }
-  $selectCarrera .= '</select>';
+  $selectGrupo .= '</select>';
   
 ?>
  
