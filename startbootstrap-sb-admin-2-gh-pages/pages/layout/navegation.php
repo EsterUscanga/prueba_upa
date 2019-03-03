@@ -44,10 +44,6 @@
                     <a href="Vista_Profesores.php"><i class="glyphicon glyphicon-user"></i>
                         Vista_Profesores</a>
                 </li>
-                <li>
-                    <a href="Vista_Horario.php"><i class="glyphicon glyphicon-user"></i> Horario</a>
-                </li>
-
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
