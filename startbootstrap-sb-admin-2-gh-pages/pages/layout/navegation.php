@@ -1,48 +1,33 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../index.html">Universidad Politecnica de Aguascalientes</a>
+    <div class="class="text-center"" style="padding-left: 10%">
+        <img src="../assets/img/upa_header2.png"  class="img-fluid"  alt="">
     </div>
+
 
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                    <!-- /input-group -->
-                </li>
                 <li>
-                    <a href="../index.html"><i class="glyphicon glyphicon-star"></i> Inicio</a>
+                    <a href="../index.html"><i class="fas fa-home"></i></i> Inicio</a>
                 </li>
                 <li>
                     <a href="Solicitudes.html"><i class="glyphicon glyphicon-list-alt"></i> Solicitudes</a>
                 </li>
                 <li>
-                    <a href="Materia_Grupo.php"><i class="glyphicon glyphicon-th"></i> Materia_Grupo</a>
+                    <a href="Materia_Grupo.php"><i class="fas fa-calendar-day"></i> Registro de horario</a>
                 </li>
                 <li>
-                    <a href="Vista_Carreras.php"><i class="glyphicon glyphicon-eye-open"></i>
-                        Vista_Carrera</a>
+                    <a href="Vista_Carreras.php"><i class="fas fa-graduation-cap"></i> Carreras</a>
                 </li>
                 <li>
-                    <a href="Vista_Materias.php"><i class="glyphicon glyphicon-menu-hamburger"></i>
-                        Vista_Materia</a>
+                    <a href="Vista_Materias.php"><i class="fas fa-pencil-alt"></i> Materias</a>
                 </li>
                 <li>
                     <a href="Vista_Profesores.php"><i class="glyphicon glyphicon-user"></i>
-                        Vista_Profesores</a>
+                        Profesores</a>
+                </li>
+                <li>
+                    <a href="Vista_Grupos.php"><i class="fas fa-chalkboard-teacher"></i> Grupos</a>
                 </li>
             </ul>
         </div>
