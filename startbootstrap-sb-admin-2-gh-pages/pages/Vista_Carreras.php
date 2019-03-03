@@ -21,7 +21,7 @@
                     <div class="col-xs-5">
                         <label for="disabledSelect">Buscar</label>
                         <span class="glyphicon glyphicon-search"></span>
-                        <?php echo $option; ?>
+                        <?php echo $optionCarrera; ?>
                     </div>
                 </div>
                 <br>
