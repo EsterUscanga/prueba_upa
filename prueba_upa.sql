@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `db_dep`.`grupos` (
   `id_grupo` INT ZEROFILL NOT NULL AUTO_INCREMENT,
   `nombre_grupo` VARCHAR(45) NOT NULL,
   `id_carrera` INT ZEROFILL NOT NULL,
-  `materia_profesor_id_materia_profesor` INT ZEROFILL NOT NULL,
   PRIMARY KEY (`id_grupo`),
   CONSTRAINT `fk_grupos_carreras`
     FOREIGN KEY (`id_carrera`)
