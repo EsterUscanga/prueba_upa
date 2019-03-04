@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Vista Grupo</h1>
+                        <h1 class="page-header">Grupos</h1>
 
                     </div>
                     <!-- /.col-lg-12 -->
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <br>
-                <form method="post" action="Vista_Carreras.php">
+                <form method="post" action="Vista_Grupos.php">
                     <div class="row">
                         <div class="col-xs-5">
                           
@@ -36,8 +36,7 @@
                             <br>
                             <label for="disabledSelect">Nombre de la carrera</label>
                             <br>
-                            <input type="text" name="nombre_carrera" class="form-control" id="regresarCarrera" onkeyup="this.value = this.value.toUpperCase();"
-                                required></input>
+                            <?php echo $optionCarrera;?>
                             <br>
                             <?php include 'layout/buttonCRUD.php'?>
                         </div>
@@ -65,7 +64,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-    <script src="../js/scriptCarreras.js"></script>
+    <script src="../js/scriptGrupos.js"></script>
 
 </body>
 
