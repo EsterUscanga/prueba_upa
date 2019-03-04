@@ -2,15 +2,17 @@
   include 'connetion.php';
 
   if (isset($_POST['save'])) {
-    $name = $_POST['nombre_carrera'];
-  	$sql = "INSERT INTO carreras (nombre_carrera) VALUES ('{$name}')";
-  	mysqli_query($conn, $sql);
+    $name = $_POST['nombre_grupo'];
+    $id_carrera = $_POST['id_carrera'];
+  	$sql = "INSERT INTO grupos (nombre_grupo, id_carrera) VALUES ('{$name}', '{$id_carrera}')";
+    mysqli_query($conn, $sql);
+    echo "hola";
   	exit();
   }
 
   if (isset($_GET['getInfo'])) {
-    $id_carrera = $_GET['id_carrera'];
-    $sqlInputs = "SELECT * FROM carreras where id_carrera = {$id_carrera}";
+    $id_grupo = $_GET['id_grupo'];
+    $sqlInputs = "SELECT nombre_grupo, nombre_carrera FROM grupos join carreras WHERE '{$id_grupo}'= carreras.id_carrera";
     $result = mysqli_query($conn, $sqlInputs);
     $row = mysqli_fetch_array($result);
     echo json_encode($row);
@@ -41,5 +43,14 @@
     $selectGrupo .= '<option value="'. $row['nombre_grupo'] .'" id="' . $row['id_grupo'] . '">'. $row['nombre_grupo'] .'</option>';
   }
   $selectGrupo .= '</select>';
+
+  $sql = "SELECT * FROM carreras order by nombre_carrera asc";
+  $result = mysqli_query($conn, $sql);
+  $optionCarrera = '<select id="selectCarrera" class="form-control">'; 
+  $optionCarrera .= '<option>Selecciona Carrera</option>';
+  while ($row = mysqli_fetch_array($result)){
+    $optionCarrera .= '<option value="'. $row['nombre_carrera'] .'" id="' . $row['id_carrera'] . '">'. $row['nombre_carrera'] .'</option>';
+  }
+  $optionCarrera .= '</select>';
 ?>
  
