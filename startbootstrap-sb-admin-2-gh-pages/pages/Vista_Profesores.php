@@ -55,7 +55,12 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <label for="disabledSelect">Grado academico</label>
-                            <input type="text" class="form-control" id="regresarGradoAcademico"onkeyup="this.value = this.value.toUpperCase();" required></input>
+                            <select name="" id="regresarGradoAcademico" class="form-control">>
+                                <option value="select">Selecciona especialidad</option>
+                                <option value="LICENCIATURA">LICENCIATURA</option>
+                                <option value="MAESTRIA">MAESTRIA</option>
+                                <option value="DOCTORADO">DOCTORADO</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
