@@ -2,7 +2,6 @@
 $(document).ready(function () {
 
   $(document).on('click', '#agregar', function () {
-    document.write('hol')
     let grupo = $('#regresarGrupo').val()
     let carrera = $('#selectCarrera').children(":selected").attr("id");
     $.ajax({
@@ -22,6 +21,8 @@ $(document).ready(function () {
 
   $("#selectGrupo").change(function() {
     let id = $(this).children(":selected").attr("id")
+    $("#regresarGrupo").val('')
+    $("#selectCarrera").val('select')
     $.ajax({
       url: '../php/CRUDGrupos.php',
       type: 'GET',
@@ -30,9 +31,7 @@ $(document).ready(function () {
         'id_grupo': id,
       },
       success: function(response){
-        alert(response)
         const obj = JSON.parse(response)
-        alert(obj['nombre_carrera'])
         $("#regresarGrupo").val(obj['nombre_grupo'])
         $("#selectCarrera").val(obj['nombre_carrera'])
       }
@@ -78,12 +77,3 @@ $(document).ready(function () {
   })
   
 })
-
-function cancel() {
-  $('#regresarNombre').val('')
-  $('#regresarApellido').val('')
-  $('#regresarCorreoPersonal').val('')
-  $('#regresarCorreoInstitucional').val('')
-  $('#regresarGradoAcademico').val('')
-  $('#regresarEspecialidad').val('')         
-}
