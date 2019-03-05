@@ -17,13 +17,16 @@ $(document).ready(function () {
         'correo_personal': personal,
         'grado_academico': grado,
         'especialidad': especialidad,
-
+      },
+      success: function (response) {
+        alert("Registro agregado")
       }
     })
   })
 
   $("#selectProfesor").change(function() {
     let id = $(this).children(":selected").attr("id")
+    $('#regresarEspecialidad').val(obj["select"])  
     $.ajax({
       url: '../php/CRUDMaestros.php',
       type: 'GET',
