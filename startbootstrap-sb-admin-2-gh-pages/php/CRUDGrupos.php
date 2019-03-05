@@ -12,7 +12,7 @@
 
   if (isset($_GET['getInfo'])) {
     $id_grupo = $_GET['id_grupo'];
-    $sqlInputs = "SELECT nombre_grupo, nombre_carrera FROM grupos join carreras WHERE '{$id_grupo}'= carreras.id_carrera";
+    $sqlInputs = "SELECT nombre_grupo, nombre_carrera FROM grupos join carreras WHERE id_grupo = '{$id_grupo}' AND grupos.id_carrera = carreras.id_carrera";
     $result = mysqli_query($conn, $sqlInputs);
     $row = mysqli_fetch_array($result);
     echo json_encode($row);
@@ -47,7 +47,7 @@
   $sql = "SELECT * FROM carreras order by nombre_carrera asc";
   $result = mysqli_query($conn, $sql);
   $optionCarrera = '<select id="selectCarrera" class="form-control">'; 
-  $optionCarrera .= '<option>Selecciona Carrera</option>';
+  $optionCarrera .= '<option value="select">Selecciona Carrera</option>';
   while ($row = mysqli_fetch_array($result)){
     $optionCarrera .= '<option value="'. $row['nombre_carrera'] .'" id="' . $row['id_carrera'] . '">'. $row['nombre_carrera'] .'</option>';
   }
