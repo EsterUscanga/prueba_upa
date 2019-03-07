@@ -11,7 +11,7 @@
                     <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Salir</a>
                 </li>
                 <li>
-                    <a href="Solicitudes.html"><i class="glyphicon glyphicon-list-alt"></i> Solicitudes</a>
+                    <a href="Vista_Solicitudes.php"><i class="glyphicon glyphicon-list-alt"></i> Solicitudes</a>
                 </li>
                 <li>
                     <a href="Materia_Grupo.php"><i class="fas fa-calendar-day"></i> Registro de horario</a>
