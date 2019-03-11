@@ -9,8 +9,8 @@ $(document).ready(function () {
       type: 'POST',
       data: {
         'save': 1,
-        'nombre_grupo' : grupo,
-        'id_carrera' : carrera
+        'nombre_grupo': grupo,
+        'id_carrera': carrera
       },
       success: function (response) {
         $('#selectcarrera').append(response)
@@ -19,7 +19,7 @@ $(document).ready(function () {
     })
   })
 
-  $("#selectGrupo").change(function() {
+  $("#selectGrupo").change(function () {
     let id = $(this).children(":selected").attr("id")
     $("#regresarGrupo").val('')
     $("#selectCarrera").val('select')
@@ -30,7 +30,7 @@ $(document).ready(function () {
         'getInfo': true,
         'id_grupo': id,
       },
-      success: function(response){
+      success: function (response) {
         const obj = JSON.parse(response)
         $("#regresarGrupo").val(obj['nombre_grupo'])
         $("#selectCarrera").val(obj['nombre_carrera'])
@@ -56,7 +56,7 @@ $(document).ready(function () {
           'correo_personal': personal,
           'grado_academico': grado,
           'especialidad': especialidad,
-  
+
         }
       })
     })
@@ -69,11 +69,16 @@ $(document).ready(function () {
           'delete': true,
           'id_maestro': id,
         },
-        success: function(response){   
-          $("#selectProfesor option[value='"+response+"']").remove()
+        success: function (response) {
+          $("#selectProfesor option[value='" + response + "']").remove()
         }
       })
     })
   })
-  
+
 })
+
+function cancel() {
+  $("#regresarGrupo").val('')
+  $("#selectCarrera").val('select')
+}
