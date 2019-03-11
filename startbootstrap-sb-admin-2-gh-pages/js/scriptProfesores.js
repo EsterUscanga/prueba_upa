@@ -26,7 +26,13 @@ $(document).ready(function () {
 
   $("#selectProfesor").change(function() {
     let id = $(this).children(":selected").attr("id")
-    $('#regresarEspecialidad').val(obj["select"])  
+    $('#regresarNombre').val("")
+    $('#regresarApellido').val("")
+    $('#regresarCorreoPersonal').val("")
+    $('#regresarCorreoInstitucional').val("")
+    $('#regresarGradoAcademico').val("")       
+    $('#regresarEspecialidad').val("")
+    $('#regresarEspecialidad').val("")
     $.ajax({
       url: '../php/CRUDMaestros.php',
       type: 'GET',

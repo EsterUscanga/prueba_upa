@@ -56,9 +56,9 @@
   $sqlOption = "SELECT * FROM maestros order by apellido_maestro asc";
   $result = mysqli_query($conn, $sqlOption);
   $option = '<select id="selectProfesor" class="form-control">'; 
-  $option .= '<option>Selecciona profesor</option>';
+  $option .= '<option value="select">Selecciona profesor</option>';
   while ($row = mysqli_fetch_array($result)){
-    $option .= '<option value="" id=" '. $row['id_maestro'] .'">' . $row['nombre_maestro'] . ' '. $row['apellido_maestro'] .'</option>';
+    $option .= '<option value="" id="'. $row['id_maestro'] .'" value="'. $row['nombre_maestro'] .'" >' . $row['nombre_maestro'] . ' '. $row['apellido_maestro'] .'</option>';
   }
   $option .= '</select>';
 
