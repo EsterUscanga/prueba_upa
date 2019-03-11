@@ -28,6 +28,9 @@
                 <li>
                     <a href="Vista_Grupos.php"><i class="fas fa-chalkboard-teacher"></i> Grupos</a>
                 </li>
+                <li>
+                    <a href="Vista_Edificios.php"><i class="far fa-building"></i> Edificios</a>
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
