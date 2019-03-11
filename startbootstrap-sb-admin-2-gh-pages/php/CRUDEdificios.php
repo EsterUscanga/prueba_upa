@@ -2,17 +2,15 @@
   include 'connetion.php';
 
   if (isset($_POST['save'])) {
-    $name = $_POST['nombre_grupo'];
-    $id_carrera = $_POST['id_carrera'];
-  	$sql = "INSERT INTO grupos (nombre_grupo, id_carrera) VALUES ('{$name}', '{$id_carrera}')";
+    $name = $_POST['nombre_edificio'];
+  	$sql = "INSERT INTO edificios (nombre_edificio) VALUES ('{$name}')";
     mysqli_query($conn, $sql);
-    echo "hola";
   	exit();
   }
 
   if (isset($_GET['getInfo'])) {
-    $id_grupo = $_GET['id_grupo'];
-    $sqlInputs = "SELECT nombre_grupo, nombre_carrera FROM grupos join carreras WHERE id_grupo = '{$id_grupo}' AND grupos.id_carrera = carreras.id_carrera";
+    $id_edificio = $_GET['id_edificio'];
+    $sqlInputs = "SELECT nombre_edificio FROM edificios join carreras WHERE id_edificio = '{$id_edificio}'";
     $result = mysqli_query($conn, $sqlInputs);
     $row = mysqli_fetch_array($result);
     echo json_encode($row);
@@ -20,10 +18,10 @@
   }
 
   if (isset($_POST['update'])) {
-    $id = $_POST['id_carrera'];
-    $name = $_POST['nombre_carrera'];
+    $id = $_POST['id_edificio'];
+    $name = $_POST['nombre_edificio'];
 
-    $sql = "UPDATE carreras SET nombre_carrera = '{$name}' WHERE id_carrera = {$id}"; 
+    $sql = "UPDATE edificios SET nombre_edificio = '{$name}' WHERE id_edificio = {$id}"; 
   	mysqli_query($conn, $sql);
   	exit();
   }
@@ -36,21 +34,13 @@
   	exit();
   }
   
-  $optionGrupo = "SELECT * FROM grupos order by nombre_grupo asc";
-  $resultGrupo = mysqli_query($conn, $optionGrupo);
-  $selectGrupo = '<select id="selectGrupo" class="form-control">'; 
-  while ($row = mysqli_fetch_array($resultGrupo)){
-    $selectGrupo .= '<option value="'. $row['nombre_grupo'] .'" id="' . $row['id_grupo'] . '">'. $row['nombre_grupo'] .'</option>';
+  $optionEdificio = "SELECT * FROM edificios order by nombre_edificio asc";
+  $resultEdificio = mysqli_query($conn, $optionEdificio);
+  $selectEdificio = '<select id="selectEdificio" class="form-control">'; 
+  while ($row = mysqli_fetch_array($resultEdificio)){
+    $selectEdificio .= '<option value="'. $row['nombre_edificio'] .'" id="' . $row['id_edificio'] . '">'. $row['nombre_edificio'] .'</option>';
   }
-  $selectGrupo .= '</select>';
+  $selectEdificio .= '</select>';
 
-  $sql = "SELECT * FROM carreras order by nombre_carrera asc";
-  $result = mysqli_query($conn, $sql);
-  $optionCarrera = '<select id="selectCarrera" class="form-control">'; 
-  $optionCarrera .= '<option value="select">Selecciona Carrera</option>';
-  while ($row = mysqli_fetch_array($result)){
-    $optionCarrera .= '<option value="'. $row['nombre_carrera'] .'" id="' . $row['id_carrera'] . '">'. $row['nombre_carrera'] .'</option>';
-  }
-  $optionCarrera .= '</select>';
 ?>
  

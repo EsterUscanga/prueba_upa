@@ -2,75 +2,44 @@
 $(document).ready(function () {
 
   $(document).on('click', '#agregar', function () {
-    let grupo = $('#regresarGrupo').val()
-    let carrera = $('#selectCarrera').children(":selected").attr("id");
+    let edificio = $('#regresarEdificio').val()
     $.ajax({
-      url: '../php/CRUDGrupos.php',
+      url: '../php/CRUDEdificios.php',
       type: 'POST',
       data: {
         'save': 1,
-        'nombre_grupo' : grupo,
-        'id_carrera' : carrera
+        'nombre_edificio' : edificio,
       },
-      success: function (response) {
-        $('#selectcarrera').append(response)
+      success: function () {
         alert("Registro agregado")
       }
     })
   })
 
-  $("#selectGrupo").change(function() {
+  $("#selectEdificio").change(function() {
     let id = $(this).children(":selected").attr("id")
-    $("#regresarGrupo").val('')
-    $("#selectCarrera").val('select')
     $.ajax({
-      url: '../php/CRUDGrupos.php',
+      url: '../php/CRUDEdificios.php',
       type: 'GET',
       data: {
         'getInfo': true,
-        'id_grupo': id,
+        'id_edificio': id,
       },
       success: function(response){
         const obj = JSON.parse(response)
-        $("#regresarGrupo").val(obj['nombre_grupo'])
-        $("#selectCarrera").val(obj['nombre_carrera'])
+        $("#regresarEdificio").val(obj['nombre_edificio'])
       }
     })
 
     $(document).on('click', '#modificar', function () {
-      let name = $('#regresarNombre').val()
-      let apellidos = $('#regresarApellido').val()
-      let personal = $('#regresarCorreoPersonal').val()
-      let institucional = $('#regresarCorreoInstitucional').val()
-      let grado = $('#regresarGradoAcademico').val()
-      let especialidad = $('#regresarEspecialidad').val()
+      let name = $('#regresarEdificio').val()
       $.ajax({
-        url: '../php/CRUDMaestros.php',
+        url: '../php/CRUDEdificios.php',
         type: 'POST',
         data: {
           'update': true,
-          'id_maestro': id,
-          'nombre_maestro': name,
-          'apellido_maestro': apellidos,
-          'correo_upa': institucional,
-          'correo_personal': personal,
-          'grado_academico': grado,
-          'especialidad': especialidad,
-  
-        }
-      })
-    })
-
-    $(document).on('click', '#borrar', function () {
-      $.ajax({
-        url: '../php/CRUDMaestros.php',
-        type: 'GET',
-        data: {
-          'delete': true,
-          'id_maestro': id,
-        },
-        success: function(response){   
-          $("#selectProfesor option[value='"+response+"']").remove()
+          'id_edificio': id,
+          'nombre_edificio': name,
         }
       })
     })
